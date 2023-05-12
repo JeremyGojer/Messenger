@@ -1,6 +1,4 @@
-body{
-    
-}
+
 .main {
     width:100vw;
     height:100vh;
@@ -23,16 +21,20 @@ body{
     border-radius: 10px;
     background-color: black;
     color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.sender{
+.sender,form{
     margin:auto;
-    margin-top:1%;
-    bottom:0px;
+    width:100%;
     border:2px dotted black;
     display:flex;
     flex-direction: row;
     padding:2px;
 }
+/* form{
+    display: flex;
+    flex-direction: row;
+} */
 .msgarea{
     width:170%;
     box-sizing: border-box;

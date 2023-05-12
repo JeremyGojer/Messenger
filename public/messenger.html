@@ -18,9 +18,12 @@
                 url: "http://localhost:9000/getall",
                 type: "GET",
                 success: (req,res)=>{
-                    console.log(req);
-                    console.log(res);
-                    var arr = req.body;
+                    var arr = req;
+                    var mmm = ''
+                    for(m of arr){
+                        mmm += `<div>${m}</div>`
+                    }
+                    $('#messages').html(mmm)
                 },
                 error:()=>{
                     console.log("there was a error with ajax");
@@ -28,6 +31,7 @@
             });
         }
         setInterval(getMessages,1000)
+        
         
     </script>
     <title>Messenger</title>
@@ -41,12 +45,14 @@
                     </div>
             </div>
             <div class="sender">
-                <div class="msgarea">
-                    <input class="msg" type="text" id="msg" name="msg"/>
-                </div>
-                <div class="options">
-                    <button class="send" type="submit" id="send" name="send">Send <i class="fa fa-send"></i></button>
-                </div>
+                <form action="/send" method="post">
+                    <div class="msgarea">
+                        <input class="msg" type="text" id="msg" name="msg"/>
+                    </div>
+                    <div class="options">
+                        <button class="send" type="submit" id="send" name="send">Send <i class="fa fa-send"></i></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
