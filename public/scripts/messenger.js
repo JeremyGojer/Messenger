@@ -1,11 +1,13 @@
+$().ready
 $.ajax({
-    url: "https://reqres.in/api/users",
+    url: "https://localhost:9000/getall",
     type: "GET",
-    data: {
-        name: "paul rudd",
-        movies: ["I Love You Man", "Role Models"]
+    success: (req,res)=>{
+        console.log(req.body);
+        console.log(res);
+        var arr = req.body;
     },
-    success: function(response){
-        console.log(response);
+    error:()=>{
+        console.log("there was a error with ajax");
     }
 });

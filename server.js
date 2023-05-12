@@ -5,15 +5,11 @@ const __filename = fileURLToPath(import.meta.url)
 
 const _dir = path.join(dirname(__filename),'public')
 var app = express();
-var msqq = []
+var msqq = ['Hello','ahchj','hjvhasdv','sagdvhsad']
 
 app.use(express.static(_dir))
 
 app.get('/',(req,res)=>{
-    res.send("Hi");
-})
-
-app.get('/hello',(req,res)=>{
     res.sendFile(path.join(_dir,'welcome.html'));
 })
 
